@@ -1,0 +1,19 @@
+﻿body {
+}
+
+form  {
+    background-color:lightgrey;
+    width:320px;
+    padding:20px;
+    border:5px solid gray;
+    border-radius:25px;
+    margin:0px;
+
+
+      
+}
+
+/*For class alligning txtBoxes*/
+.txtBoxes {
+    display:block;
+}

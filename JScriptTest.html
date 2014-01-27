@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/StyleSheet.css" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Validates the page and makes sure all required fields are filled.
+        function validationBtn() {
+            var firstName = document.forms["myForm"]["fname"].value;
+            var lastName = document.forms["myForm"]["Lname"].value;
+            var Email = document.forms["myForm"]["Email"].value;
+            var body = document.forms["myForm"]["body"].value;
+            var text1 = "";
+            var text2 = "";
+            var text3 = "";
+
+
+            if (firstName == "" && lastName == "" && Email == "") {
+                text1 = "Fill in First Name";
+                text2 = "Fill in Last Name";
+                text3 = "Fill in Email";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (!(firstName == "") && lastName == "" && Email == "") {
+                text1 = "";
+                text2 = "Fill in Last Name";
+                text3 = "Fill in Email";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (firstName == "" && !(lastName == "") && Email == "") {
+
+                text1 = "Fill in First Name";
+                text2 = "";
+                text3 = "Fill in Email";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (firstName == "" && lastName == "" && !(Email == "")) {
+
+                text1 = "Fill in First Name";
+                text2 = "Fill in Last Name";
+                text3 = "";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (firstName == "" && !(lastName == "") && !(Email == "")) {
+
+                text1 = "Fill in First Name";
+                text2 = "";
+                text3 = "";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (!(firstName == "") && lastName == "" && !(Email == "")) {
+
+                text1 = "";
+                text2 = "Fill in Last Name";
+                text3 = "";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else if (!(firstName == "") && !(lastName == "") && Email == "") {
+
+                text1 = "";
+                text2 = "";
+                text3 = "Fill in Email";
+                var test = alert(text1 + "\n" + text2 + "\n" + text3);
+            }
+            else {
+                //var test = alert("All clear");
+                //Opens up an email client with target user's email.
+                document.write('<a href="mailto:' + Email + '&body=' + body + '">' + 'Click here to send feedback' + '<' + '/a>');
+            }
+        }
+
+        
+
+</script>
+
+
+
+    <p id="link"></p>
+<form name="myForm">
+<table>
+    <tr>
+        <td>
+            First name: <input type="text" name="fname" class="txtBoxes"><br/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Last name: <input type="text" name="Lname" class="txtBoxes"><br/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email: <input type="text" name="Email" class="txtBoxes"/><br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Comments: <br /> <textarea rows="10" cols="30" name="body"></textarea><br />
+        </td>
+    </tr>
+</table>
+<input type="button" value="Submit" onclick="validationBtn()">
+</form>
+</body>
+
+</html>
